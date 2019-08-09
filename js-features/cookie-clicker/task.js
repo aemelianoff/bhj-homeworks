@@ -10,18 +10,19 @@ function changeSize() {
 }
 
 let time = [];
-console.log(time.length);
+
 function speedCount() {
     if (image.onclick) {
-        if (time.length == 0) {
-            time.push(Date.now());
-            speed.textContent = 1 / ( time[time.length - 1]/1000);
-        }
-    
-    else if (time.length > 0) {
         time.push(Date.now());
-        speed.textContent = 1 / (( time[time.length - 1] - time[time.length - 2])/1000);
-    }}
+    if (time.length === 2) {
+speed.textContent = 1 / (( time[1] - time[0])/1000);
+    }
+    else if (time.length > 2) {
+time.splice(0, 1);
+    speed.textContent = 1 / (( time[1] - time[0])/1000);
+    }
+    //console.log(time);
+    }
 }
 
 image.onclick = changeSize;

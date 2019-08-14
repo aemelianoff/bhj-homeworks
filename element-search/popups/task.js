@@ -1,4 +1,4 @@
-const modalMain = document.getElementById("modal_main");
+const modalMain = document.getElementById('modal_main');
 const modalSuccess = document.getElementById('modal_success');
 const close = document.querySelectorAll('div.modal__close');
 const success = document.querySelector('a.show-success');

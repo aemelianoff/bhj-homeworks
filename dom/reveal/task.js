@@ -1,13 +1,14 @@
 const reveal = document.querySelectorAll('.reveal');
-reveal.forEach(element =>{
+for (let each of Array.from(reveal))
+{
     document.addEventListener('scroll',()=>{
         const viewPortHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
+        const elementTop = each.getBoundingClientRect().top;
         if ( elementTop < viewPortHeight) {
-            element.classList.add('reveal_active');
+            each.classList.add('reveal_active');
         };
         if ( elementTop > viewPortHeight) {
-            element.classList.remove('reveal_active');
+            each.classList.remove('reveal_active');
         };
     }); 
-});
+};
